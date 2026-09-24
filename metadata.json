@@ -1,0 +1,6 @@
+{
+  "name": "The Royal Kitchen - Ghar Ka Khana Ghar Tak",
+  "description": "Authentic homemade Pakistani food delivered across Karachi. Daily menu, Patient Special, Karahi, Biryani, Parathas, Frozen items and more.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

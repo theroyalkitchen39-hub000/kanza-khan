@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "MenuItem": {
+      "title": "Menu Item",
+      "description": "A food item on the restaurant menu",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "urduName": { "type": "string" },
+        "description": { "type": "string" },
+        "urduDescription": { "type": "string" },
+        "category": { "type": "string" },
+        "price": { "type": "number" },
+        "isAvailable": { "type": "boolean" },
+        "isActive": { "type": "boolean" },
+        "imageUrl": { "type": "string" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["id", "name", "category", "price", "isAvailable", "isActive"]
+    },
+    "WebsiteSettings": {
+      "title": "Website Settings",
+      "description": "General restaurant website configuration",
+      "type": "object",
+      "properties": {
+        "restaurantName": { "type": "string" },
+        "tagline": { "type": "string" },
+        "phone": { "type": "string" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["restaurantName", "phone"]
+    },
+    "Order": {
+      "title": "Customer Order",
+      "description": "Order placed by a customer",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orderNumber": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "orderNumber", "customerName", "customerPhone", "totalAmount", "status"]
+    }
+  },
+  "firestore": {
+    "/menuItems/{itemId}": {
+      "schema": "MenuItem",
+      "description": "Publicly readable menu items, writeable only by authenticated admin"
+    },
+    "/websiteSettings/{docId}": {
+      "schema": "WebsiteSettings",
+      "description": "Publicly readable website settings, writeable only by authenticated admin"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Order records created by customers, managed by authenticated admin"
+    }
+  }
+}
