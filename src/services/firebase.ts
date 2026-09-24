@@ -21,7 +21,7 @@ import {
   User,
   Auth 
 } from 'firebase/auth';
-import firebaseConfig from '../../firebase-applet-config.json';
+import firebaseConfig from '../config/firebaseConfig';
 import { MenuItem, WebsiteSettings, Order } from '../types';
 import { initialMenuItems, initialSettings } from '../data/initialData';
 
